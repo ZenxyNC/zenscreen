@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zenscreen/static/css/main.1018c4f1.css",
+    "main.js": "/zenscreen/static/js/main.d73e1a08.js",
+    "static/js/453.0afaa65c.chunk.js": "/zenscreen/static/js/453.0afaa65c.chunk.js",
+    "static/media/ProductSans-Regular.ttf": "/zenscreen/static/media/ProductSans-Regular.2765c69613690b1b9c03.ttf",
+    "static/media/ProductSans-Thin.ttf": "/zenscreen/static/media/ProductSans-Thin.cc886c2747bf6f2c4888.ttf",
+    "static/media/ProductSans-Light.ttf": "/zenscreen/static/media/ProductSans-Light.1dde435cdc2a9b6a7130.ttf",
+    "static/media/ProductSans-Medium.ttf": "/zenscreen/static/media/ProductSans-Medium.50b60017b2706bf654f4.ttf",
+    "static/media/ProductSans-Bold.ttf": "/zenscreen/static/media/ProductSans-Bold.153c4f86d79ce54c810c.ttf",
+    "static/media/ProductSans-Black.ttf": "/zenscreen/static/media/ProductSans-Black.99679fcb879a842df8c5.ttf",
+    "index.html": "/zenscreen/index.html",
+    "static/media/tabler_arrow-up.svg": "/zenscreen/static/media/tabler_arrow-up.391d7c8cd7e7af8cefc1.svg",
+    "main.1018c4f1.css.map": "/zenscreen/static/css/main.1018c4f1.css.map",
+    "main.d73e1a08.js.map": "/zenscreen/static/js/main.d73e1a08.js.map",
+    "453.0afaa65c.chunk.js.map": "/zenscreen/static/js/453.0afaa65c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1018c4f1.css",
+    "static/js/main.d73e1a08.js"
+  ]
+}
