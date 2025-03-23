@@ -1,5 +1,6 @@
 html {
   background-color: #212832;
+  user-select: none;
 }
 
 #htmlWrapper {
@@ -347,7 +348,23 @@ input[type= 'checkbox'] {
   opacity: 1;
 }
 
-@media screen and (max-width: 1000px) {
+#tooSmall-screen {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+
+  width: 100vw;
+  height: 100vh;
+  
+  background-color: rgb(33, 40, 50, 0.6);
+  backdrop-filter: blur(30px);
+
+  z-index: -500;
+
+  display: none;
+}
+
+@media screen and (max-width: 870px) {
   #tooSmall-screen {
     position: fixed;
     top: 0px;
@@ -359,6 +376,51 @@ input[type= 'checkbox'] {
     background-color: rgb(33, 40, 50, 0.6);
     backdrop-filter: blur(30px);
 
-    z-index: 1000
+    z-index: 1000;
+
+    display: block;
+  }
+  #tooSmall-screen #--image {
+    width: calc(50vw);
+    height: calc(50vw);
+    max-width: 300px;
+    max-height: 300px;
+
+    background-image: url('../resource/screenSize-issue.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #tooSmall-screen #--caption-title {
+    font-size: 2rem;
+    font-family: 'GSansBold';
+    color: #F5F5F5;
+
+    position: relative;
+    top: -3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: max-content
+  }
+  #tooSmall-screen #--caption-desc {
+    font-size: 1.3rem;
+    font-family: 'GSansRegular';
+    color: #F5F5F5;
+
+    text-align: center;
+
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 50px);
+    max-width: 600px
   }
 }

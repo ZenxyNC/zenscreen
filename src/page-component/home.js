@@ -16,6 +16,9 @@ import Counter from './counter/counter';
 export default function Home() {
   const [showSeconds, setShowSeconds] = useState(false);
   const [antiBurnIn, setAntiBurnIn] = useState(true);
+  const [keepWake, setKeepWake] = useState(true)
+
+  const [wakeLock,setWakeLock] = useState()
   const [antiBurnInPos, setAntiBurnInPos] = useState('position-1');
 
 
@@ -210,10 +213,66 @@ export default function Home() {
     };
   }, [antiBurnIn]);
 
+  function changeKeepWake() {
+    if(keepWake !== 'unsupported') {
+      if(keepWake) {
+        setKeepWake(false)
+      } else if(!keepWake) {
+        setKeepWake(true)
+      }
+    }
+  }
+ 
+  async function requestWake() {
+    try {
+      if ('wakeLock' in navigator) {
+        // Request a screen wake lock
+        const lock = await navigator.wakeLock.request('screen');
+        setWakeLock(lock);
+        setKeepWake(true);
+        
+        lock.addEventListener('release', () => {
+          setWakeLock(null);
+          setKeepWake(false);
+        });
+        
+      } else {
+        setKeepWake('unsupported')
+      }
+    } catch (err) {
+      console.error(`Failed to obtain wake lock: ${err.message}`);
+    }
+  }
+
+  //eslint-disable-next-line
+  function releaseWakeLock() {
+    if (wakeLock) {
+      wakeLock.release()
+        .then(() => {
+          setWakeLock(null);
+          setKeepWake(false);
+        })
+        .catch((err) => {
+          console.error(`Failed to release wake lock: ${err.message}`);
+        });
+    }
+  }
+  useEffect(() => {
+    if (keepWake) {
+      requestWake()
+    } else {
+      releaseWakeLock()
+    }
+    //eslint-disable-next-line
+  }, [keepWake])
   
   return(
     <>
-      <div id='tooSmall-screen'></div>
+      <div id='tooSmall-screen'>
+        <div id='--image' /><br/>
+        <div id='--caption-title'>Screen is too small.</div>
+        <div id='--caption-desc'>The screen size is too small to display the content properly. The minimum width is 900 px, while your current screen width is {window.innerWidth} px. You can try to enlarge the browser window size or decrease the browser screen zoom.</div>
+      </div>
       <div id="htmlWrapper">
         <div id='htmlBackground'>
           {background === 'iridescent' ? summonIridescent : ''}
@@ -244,6 +303,10 @@ export default function Home() {
                 <option value='metaballs'>MetaBalls</option>
                 <option value='balatro'>Balatro</option>
               </select><br/>
+
+              <div className='checkBox-input'>
+                <input type='checkbox' className='ui-checkbox' onChange={changeKeepWake} checked={keepWake} /> Keep screen on
+              </div>
 
               <div className='checkBox-input'>
                 <input type='checkbox' className='ui-checkbox' onChange={changeShowSeconds}/> Show Seconds<br/>
