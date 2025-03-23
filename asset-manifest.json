@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/zenscreen/static/css/main.2f437074.css",
-    "main.js": "/zenscreen/static/js/main.4e776be4.js",
+    "main.css": "/zenscreen/static/css/main.89d3d923.css",
+    "main.js": "/zenscreen/static/js/main.45f900d1.js",
     "static/js/453.0afaa65c.chunk.js": "/zenscreen/static/js/453.0afaa65c.chunk.js",
     "static/media/ProductSans-Regular.ttf": "/zenscreen/static/media/ProductSans-Regular.2765c69613690b1b9c03.ttf",
     "static/media/ProductSans-Thin.ttf": "/zenscreen/static/media/ProductSans-Thin.cc886c2747bf6f2c4888.ttf",
@@ -12,12 +12,12 @@
     "static/media/screenSize-issue.svg": "/zenscreen/static/media/screenSize-issue.1a028321e8d54fffbea7.svg",
     "index.html": "/zenscreen/index.html",
     "static/media/tabler_arrow-up.svg": "/zenscreen/static/media/tabler_arrow-up.391d7c8cd7e7af8cefc1.svg",
-    "main.2f437074.css.map": "/zenscreen/static/css/main.2f437074.css.map",
-    "main.4e776be4.js.map": "/zenscreen/static/js/main.4e776be4.js.map",
+    "main.89d3d923.css.map": "/zenscreen/static/css/main.89d3d923.css.map",
+    "main.45f900d1.js.map": "/zenscreen/static/js/main.45f900d1.js.map",
     "453.0afaa65c.chunk.js.map": "/zenscreen/static/js/453.0afaa65c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f437074.css",
-    "static/js/main.4e776be4.js"
+    "static/css/main.89d3d923.css",
+    "static/js/main.45f900d1.js"
   ]
 }
