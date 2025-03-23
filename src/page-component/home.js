@@ -288,7 +288,7 @@ export default function Home() {
 
         <div 
           id='settings-div' 
-          className={`settingsDiv ${isSettings ? 'opened' : 'closed'}`} 
+          className={`settingsDiv ${isSettings ? 'opened' : 'closed'} ${antiBurnInPos === 'position-2' ? 'settings-position-2' : 'settings-position-1'}`} 
           onMouseOver={() => setIsSettings(true)} 
           onMouseLeave={() => setIsSettings(false)}
         >
@@ -304,15 +304,15 @@ export default function Home() {
                 <option value='balatro'>Balatro</option>
               </select><br/>
 
-              <div className='checkBox-input'>
+              <div className='checkBox-input' onClick={changeKeepWake}>
                 <input type='checkbox' className='ui-checkbox' onChange={changeKeepWake} checked={keepWake} /> Keep screen on
               </div>
 
-              <div className='checkBox-input'>
-                <input type='checkbox' className='ui-checkbox' onChange={changeShowSeconds}/> Show Seconds<br/>
+              <div className='checkBox-input' onClick={changeShowSeconds}>
+                <input type='checkbox' className='ui-checkbox' onChange={changeShowSeconds} checked={showSeconds} /> Show Seconds<br/>
               </div>
 
-              <div className='checkBox-input'>
+              <div className='checkBox-input' onClick={changeAntiBurnIn}>
                 <input type='checkbox' className='ui-checkbox' onChange={changeAntiBurnIn} checked={antiBurnIn} /> Burn-in prevention
               </div>
 
